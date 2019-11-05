@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import logo from "./logo.svg";
 import { Screen } from "./screen";
 import "./App.css";
+import { connect } from 'react-redux'
+import Alternative from "./features/questions/alternative";
+
 
 function App() {
   return (
@@ -99,9 +102,6 @@ function QuestionScreen() {
   </Screen>;
 }
 
-function Alternative(props:any) {
-  return <div className="alternative">{props.children}</div>
-}
 
 /**
  *
