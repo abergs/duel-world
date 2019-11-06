@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import logo from "./logo.svg";
 import { Screen } from "./screen";
 import "./App.css";
-import { connect } from 'react-redux'
+import { connect, useDispatch } from 'react-redux'
 import { Game } from "./Game";
+import {setPath} from "features/nav/navSlice";
 
 
 function App() {
@@ -24,9 +25,11 @@ function App() {
  * Invite friend
  *
  */
+
 export function WelcomeWizard() {
   var [name, setName] = useState("");
   var [isPlaying, setPlay] = useState(false);
+  const dispatch = useDispatch();
 
   return (
     <Screen>
@@ -43,6 +46,7 @@ export function WelcomeWizard() {
       <button
         onClick={e => {
           setPlay(true);
+          dispatch(setPath("round"));
         }}
       >
         Play

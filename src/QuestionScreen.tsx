@@ -5,10 +5,9 @@ import { useSelector } from "useSelector";
 import {setPath} from "features/nav/navSlice";
 import { useDispatch } from "react-redux";
 import { IQuestion, IAlternative, answerQuestion, startRound } from "features/questions/roundSlice";
+import { beep1, beep2, tickHorror } from "features/sound";
 
-
-
-function useInterval(callback:any, delay:number) {
+function useInterval(callback:any, delay:number|null) {
   const savedCallback = useRef();
 
   // Remember the latest callback.
@@ -39,26 +38,32 @@ function useInterval(callback:any, delay:number) {
  */
 export default function QuestionScreen(props:any) {
 
+  const question: IQuestion = props.question;
+
   const round = useSelector(state => state.round);
   const dispatch = useDispatch()
-  let [seconds, setSeconds] = useState(-1);
+  let [seconds, setSeconds] = useState(10);
 
-  if(seconds == -1 ) seconds = 10;
+  // if(seconds == -1 ) seconds = 10;
+
+  console.warn("Q", question.text, seconds);
 
   useInterval(() => {
     // Your custom logic here
-    setSeconds(seconds - 1);
-  }, 1000);
+    if (seconds <= 3) {
+      tickHorror.play();
+    } else {
+      beep1.play();
+    }
+    console.log("Interval", seconds, question.text);
+    let thisQ = question.text;
+    
+    setSeconds(seconds - .1);
+    
+    
+  }, seconds <= 0 ? null : 100);
 
-  if(round.status == "not-started") {
-    return <Screen><h1>Start the round!</h1><button onClick={(e) => dispatch(startRound())}>Start!</button></Screen>
-  }
 
-  if(round.status == "finished") {
-    return <Screen><h1>Your Score is {round.myScore}!</h1><button onClick={(e) => dispatch(startRound())}>Restart</button></Screen>
-  }
-
-  const question: IQuestion = round.questions[round.currentQuestion];
   const alternatives = question.alternatives;
 
   
@@ -68,8 +73,9 @@ export default function QuestionScreen(props:any) {
 
   const answerHandler = (alternative: IAlternative) => {
     console.log("Answered", alternative);
-    dispatch(setPath(alternative));
+    // dispatch(setPath(alternative));
     dispatch(answerQuestion(alternative));
+    setSeconds(10);
     
   }
 
@@ -82,7 +88,7 @@ export default function QuestionScreen(props:any) {
     </div>
 
     <div className="timerbar" key={question.text}>
-      <div>{seconds}</div>
+      <div>{Math.ceil(seconds)}</div>
     </div>
   </Screen>;
 }
