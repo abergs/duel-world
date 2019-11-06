@@ -6,9 +6,13 @@ const mapDispatch = { setPath }
 
 function Alternative(props:any) {
 
-  const onC = (e:any) => { props.setPath(e.target.value)}
+  const text = props.text;
+  const onC = (e:any) => {
+    //props.setPath(e.target.innerText)
+    props.onClick(text);
+  }
 
-  return <div className="alternative" onClick={onC}>{props.children}</div>
+  return <div className="alternative" onClick={onC}>{text}</div>
 }
 
 export default connect(

@@ -4,9 +4,10 @@ const navSlice = createSlice({
     name: 'nav',
     initialState: { path: 'root' },    
     reducers: {
-        setPath(state, action) {
-                const {path} = action.payload;
+        setPath: (state, action) => {
+                const path = action.payload;
                 state.path = path;
+                console.log("state", path);
         }
     }
 })

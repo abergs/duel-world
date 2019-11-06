@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import { Screen } from "./screen";
 import "./App.css";
 import { connect } from 'react-redux'
-import Alternative from "./features/questions/alternative";
+import { Game } from "./Game";
 
 
 function App() {
@@ -17,19 +17,6 @@ function App() {
 }
 
 /**
- * Switches between all the screens
- */
-function Game() {
-  var [currentRound, setCurrentRound] = useState("1");
-
-  if (!currentRound) {
-    return <WelcomeWizard />;
-  }
-
-  return <QuestionScreen />;
-}
-
-/**
  *
  * Logo, intro
  * Pick name
@@ -37,7 +24,7 @@ function Game() {
  * Invite friend
  *
  */
-function WelcomeWizard() {
+export function WelcomeWizard() {
   var [name, setName] = useState("");
   var [isPlaying, setPlay] = useState(false);
 
@@ -83,25 +70,6 @@ function People() {}
 
 /** Shows rounds history(?) starts next round? */
 function Duel() {}
-
-/**
- *
- * Displays one question and alternatives
- * dumb
- */
-function QuestionScreen() {
-  return <Screen>
-    <h1>In what country is Dublin the capital?</h1>
-
-    <div className="alternatives">
-        <Alternative pos={1}>France</Alternative>
-        <Alternative pos={2}>Scotland</Alternative>
-        <Alternative pos={3}>Serbia</Alternative>
-        <Alternative pos={4}>Ireland</Alternative>
-    </div>
-  </Screen>;
-}
-
 
 /**
  *
