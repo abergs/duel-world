@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/duel-world/precache-manifest.a28b6f268cef8a1406a0d5c09bac0c60.js"
+  "/duel-world/precache-manifest.66b3da15ca94ec5e7347faddf7e4b528.js"
 );
 
 self.addEventListener('message', (event) => {

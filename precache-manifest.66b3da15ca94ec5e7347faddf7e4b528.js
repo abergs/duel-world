@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1d29a51c651a730392913ae549f310d8",
+    "revision": "d9ec707e67021c1e702d1e627596acbd",
     "url": "/duel-world/index.html"
   },
   {
-    "revision": "3ae3f3eb0a25ac448810",
+    "revision": "6947149e45e3d201fcee",
     "url": "/duel-world/static/css/main.28f63289.chunk.css"
   },
   {
-    "revision": "157aa33189d1de93157e",
-    "url": "/duel-world/static/js/2.24dc94b1.chunk.js"
+    "revision": "20fa80c4d64ed2a91efd",
+    "url": "/duel-world/static/js/2.3e39fe58.chunk.js"
   },
   {
-    "revision": "3ae3f3eb0a25ac448810",
-    "url": "/duel-world/static/js/main.2f083a6d.chunk.js"
+    "revision": "6947149e45e3d201fcee",
+    "url": "/duel-world/static/js/main.d5d1af79.chunk.js"
   },
   {
     "revision": "254185639b527d029281",
