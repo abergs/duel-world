@@ -22,15 +22,16 @@ export default function Alternative(props: IAlternativeProps) {
     }
   };
 
-  const Box = posed.div({
-    pressable: true,
-    init: { scale: 1 },
-    press: { scale: 0.8 }
-  });
+  // const Box = posed.div({
+  //   pressable: true,
+  //   init: { scale: 1 },
+  //   press: { scale: 0.8 },
+  //   onPoseComplete: p
+  // });
 
   return (
-    <Box className={classnames({"alternative":true, "isMine": props.isMine, "isCorrect": props.isCorrect})} onClick={onC}>
+    <div className={classnames({"alternative":true, "isMine": props.isMine, "isCorrect": props.isCorrect})} onClick={onC}>
       {text}
-    </Box>
+    </div>
   );
 }

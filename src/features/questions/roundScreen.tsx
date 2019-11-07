@@ -43,7 +43,7 @@ export default function RoundScreen(props: any) {
   if (round.status == "finished") {
     return (
       <Screen>
-        <h1>Your Score is {round.myScore}!</h1>
+        <h1>Your Score is {round.myScore}</h1>
         <Button onClick={e => dispatch(startRound())}>Restart</Button>
       </Screen>
     );

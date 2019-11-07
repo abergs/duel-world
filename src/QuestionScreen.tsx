@@ -90,6 +90,7 @@ export default function QuestionScreen(props:any) {
 
   return <Screen>
     <h1>{question.text}</h1>
+    <p>&nbsp;</p>
 
     <div className="alternatives">
       {alternatives.map(x => <Alternative text={x.text} onClick={(y:string) => answerHandler(x)} key={x.text} />)}
