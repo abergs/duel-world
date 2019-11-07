@@ -31,7 +31,7 @@ function getRandomInt(max: number) {
 export default function RoundScreen(props: any) {
   const round = useSelector(state => state.round);
   const dispatch = useDispatch();
-  const [xy, setxy] = useState([0,0]);
+  const [xy, setxy] = useState([window.innerWidth / 2,window.innerHeight / 2]);
   const [recycle, setrecycle] = useState(false);
 
 //   useEffect(() => {

@@ -18,6 +18,6 @@ export const errorbuzz = new Howl({src:errorbuzzMp3});
 export const popNegative = new Howl({src:bubbleNegativeMp3});
 export const chime = new Howl({src:chimeMp3});
 
-export const bubbles = new Howl({src:bubblesmp3, volume:0.02});
+export const bubbles = new Howl({src:bubblesmp3, volume:0.04});
 export const fart = new Howl({src:fartmp3});
 
