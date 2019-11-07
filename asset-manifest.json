@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/duel-world/static/css/main.28f63289.chunk.css",
+    "main.js": "/duel-world/static/js/main.2f083a6d.chunk.js",
+    "main.js.map": "/duel-world/static/js/main.2f083a6d.chunk.js.map",
+    "runtime-main.js": "/duel-world/static/js/runtime-main.9ea5906a.js",
+    "runtime-main.js.map": "/duel-world/static/js/runtime-main.9ea5906a.js.map",
+    "static/js/2.24dc94b1.chunk.js": "/duel-world/static/js/2.24dc94b1.chunk.js",
+    "static/js/2.24dc94b1.chunk.js.map": "/duel-world/static/js/2.24dc94b1.chunk.js.map",
+    "index.html": "/duel-world/index.html",
+    "precache-manifest.a28b6f268cef8a1406a0d5c09bac0c60.js": "/duel-world/precache-manifest.a28b6f268cef8a1406a0d5c09bac0c60.js",
+    "service-worker.js": "/duel-world/service-worker.js",
+    "static/css/main.28f63289.chunk.css.map": "/duel-world/static/css/main.28f63289.chunk.css.map",
+    "static/media/bubbleNegative.mp3": "/duel-world/static/media/bubbleNegative.a992299e.mp3",
+    "static/media/button1.mp3": "/duel-world/static/media/button1.97aa97e2.mp3",
+    "static/media/button2.mp3": "/duel-world/static/media/button2.3dfc9042.mp3",
+    "static/media/chime.mp3": "/duel-world/static/media/chime.6cbb16a2.mp3",
+    "static/media/errorbuzz.mp3": "/duel-world/static/media/errorbuzz.20df5d64.mp3",
+    "static/media/tickHorror.mp3": "/duel-world/static/media/tickHorror.57aa7ab9.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9ea5906a.js",
+    "static/js/2.24dc94b1.chunk.js",
+    "static/css/main.28f63289.chunk.css",
+    "static/js/main.2f083a6d.chunk.js"
+  ]
+}
