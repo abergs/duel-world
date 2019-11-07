@@ -11,6 +11,7 @@ import {
   startRound
 } from "features/questions/roundSlice";
 import QuestionScreen from "QuestionScreen";
+import Button from "components/button";
 
 /**
  *
@@ -43,10 +44,10 @@ export default function RoundScreen(props: any) {
     return (
       <Screen>
         <h1>Your Score is {round.myScore}!</h1>
-        <button onClick={e => dispatch(startRound())}>Restart</button>
+        <Button onClick={e => dispatch(startRound())}>Restart</Button>
       </Screen>
     );
   }
 
-  return <QuestionScreen question={round.questions[round.currentQuestion]} />;
+  return <QuestionScreen />;
 }

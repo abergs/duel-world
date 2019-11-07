@@ -5,7 +5,7 @@ import { useSelector } from "useSelector";
 import {setPath} from "features/nav/navSlice";
 import { useDispatch } from "react-redux";
 import { IQuestion, IAlternative, answerQuestion, startRound } from "features/questions/roundSlice";
-import { beep1, beep2, tickHorror } from "features/sound";
+import { beep1, beep2, tickHorror, popNegative, errorbuzz, chime } from "features/sound";
 
 function useInterval(callback:any, delay:number|null) {
   const savedCallback = useRef();
@@ -29,6 +29,11 @@ function useInterval(callback:any, delay:number|null) {
   }, [delay]);
 }
 
+const NO_ALTERNATIVE ={
+  text: "",
+  points:0
+};
+
 /**
  * 
  * Display questsions
@@ -38,57 +43,60 @@ function useInterval(callback:any, delay:number|null) {
  */
 export default function QuestionScreen(props:any) {
 
-  const question: IQuestion = props.question;
-
   const round = useSelector(state => state.round);
+  const question: IQuestion = round.questions[round.currentQuestion]
+
   const dispatch = useDispatch()
   let [seconds, setSeconds] = useState(10);
-
-  // if(seconds == -1 ) seconds = 10;
-
-  console.warn("Q", question.text, seconds);
+  let delay = seconds < -1 ? null : 100;
+  
 
   useInterval(() => {
     // Your custom logic here
-    if (seconds <= 3) {
+    if(seconds <= 0) {
+      errorbuzz.play();
+      // if zero, play loose
+      dispatch(answerQuestion(NO_ALTERNATIVE));
+      // setSeconds(-1);
+      return;
+    }
+    else if (seconds <= 3) {
       tickHorror.play();
     } else {
       beep1.play();
     }
-    console.log("Interval", seconds, question.text);
+    
     let thisQ = question.text;
     
     setSeconds(seconds - .1);
     
     
-  }, seconds <= 0 ? null : 100);
-
+  }, delay);
 
   const alternatives = question.alternatives;
 
-  
-
-  
-  // const [timer, setTimer] = useState(question.time);
-
   const answerHandler = (alternative: IAlternative) => {
     console.log("Answered", alternative);
-    // dispatch(setPath(alternative));
+    if(alternative.points < 1) {
+      popNegative.play();
+    } else {
+      chime.play();
+    }
     dispatch(answerQuestion(alternative));
-    setSeconds(10);
-    
+    setSeconds(10);    
   }
+
+  const ceilSeconds = Math.ceil(seconds);
 
   return <Screen>
     <h1>{question.text}</h1>
-    <p>{round.myScore}</p>
 
     <div className="alternatives">
       {alternatives.map(x => <Alternative text={x.text} onClick={(y:string) => answerHandler(x)} key={x.text} />)}
     </div>
 
     <div className="timerbar" key={question.text}>
-      <div>{Math.ceil(seconds)}</div>
+      <div className="value"><span className={ceilSeconds % 2 == 0 ? "anim0": ""}>{ceilSeconds}</span></div>
     </div>
   </Screen>;
 }

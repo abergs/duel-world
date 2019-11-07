@@ -27,6 +27,11 @@ export interface IAlternative {
   points: number;
 }
 
+export interface IAnswer {
+  correct: boolean;
+  alternative: IAlternative;
+}
+
 export interface IQuestion {
   id: string;
   type: "capitalof" | "countryof";
@@ -47,8 +52,9 @@ export interface IRoundState {
   roundId: string;
   questions: IQuestion[];
   currentQuestion: number;
-  status: "not-started" | "started" | "finished";
+  status: "not-started" | "started" | "finished" | "answered";
   myScore: number;
+  answers: { [question: string]: { [player: string]: string } };
 }
 
 function cq(city: string): IQuestion {
@@ -64,6 +70,7 @@ function cq(city: string): IQuestion {
 const initState: IRoundState = {
   roundId: "1",
   questions: [cq("Paris"), cq("Beirut"), cq("Tel Aviv")],
+  answers: {},
   currentQuestion: 0,
   myScore: 0,
   status: "not-started"
@@ -80,11 +87,21 @@ const roundSlice = createSlice({
     },
     answerQuestion: (state, action) => {
       const finalQ = state.questions.length - 1;
+      var alternative = action.payload as IAlternative;
+      var q = state.questions[state.currentQuestion];
+      const player = "p1";
+
+      if (!state.answers[q.text]) state.answers[q.text] = {};
+      state.answers[q.text][player] = alternative.text || "";
 
       if (state.currentQuestion <= finalQ) {
-        state.myScore += action.payload.points;
+        state.myScore += alternative.points;
       }
 
+      state.status = "answered";
+    },
+    nextQuestion: (state, action) => {
+      const finalQ = state.questions.length - 1;
       if (state.currentQuestion == finalQ) {
         state.status = "finished";
       } else if (state.currentQuestion < finalQ) {
@@ -95,6 +112,6 @@ const roundSlice = createSlice({
   }
 });
 
-export const { startRound, answerQuestion } = roundSlice.actions;
+export const { startRound, answerQuestion, nextQuestion } = roundSlice.actions;
 
 export default roundSlice.reducer;
