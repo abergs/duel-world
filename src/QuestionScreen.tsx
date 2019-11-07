@@ -34,6 +34,48 @@ const NO_ALTERNATIVE ={
   points:0
 };
 
+// const throttle = (func:any, limit:any) => {
+//   let lastFunc:any;
+//   let lastRan:any;
+//   return function() {
+//     // @ts-ignore
+//     const context:any = this;
+//     const args = arguments
+//     if (!lastRan) {
+//       func.apply(context, args)
+//       lastRan = Date.now()
+//     } else {
+//       clearTimeout(lastFunc)
+//       lastFunc = setTimeout(function() {
+//         if ((Date.now() - lastRan) >= limit) {
+//           func.apply(context, args)
+//           lastRan = Date.now()
+//         }
+//       }, limit - (Date.now() - lastRan))
+//     }
+//   }
+// }
+
+// @ts-ignore
+const throttle = (func, limit) => {
+  // @ts-ignore
+  let inThrottle
+  return function() {
+    const args = arguments
+    // @ts-ignore
+    const context = this
+    // @ts-ignore
+    if (!inThrottle) {
+      func.apply(context, args)
+      inThrottle = true
+      setTimeout(() => inThrottle = false, limit)
+    }
+  }
+}
+
+var beep = throttle(() => beep1.play(), 1000);
+var horror = throttle(() => tickHorror.play(), 1000);
+
 /**
  * 
  * Display questsions
@@ -61,9 +103,9 @@ export default function QuestionScreen(props:any) {
       return;
     }
     else if (seconds <= 3) {
-      tickHorror.play();
-    } else {
-      beep1.play();
+      horror();
+    } else if(seconds) {
+      beep();
     }
     
     let thisQ = question.text;

@@ -2,26 +2,31 @@
   "name": "duel-world",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://abergs.github.io/duel-world",
   "dependencies": {
+    "@types/howler": "^2.1.1",
     "@types/jest": "^24.0.21",
     "@types/node": "^12.12.5",
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.3",
     "@types/react-redux": "^7.1.5",
+    "gh-pages": "^2.1.1",
+    "howler": "^2.1.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-pose": "^4.0.9",
     "react-redux": "^7.1.1",
     "react-scripts": "3.2.0",
     "redux-starter-kit": "^1.0.1",
-    "typescript": "^3.6.4",
-    "uifx": "^2.0.3"
+    "typescript": "^3.6.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
