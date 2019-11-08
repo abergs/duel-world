@@ -2,6 +2,62 @@ import { createSlice, PayloadAction, createSelector } from "redux-starter-kit";
 import { string } from "prop-types";
 import QuestionScreen from "QuestionScreen";
 import { useSelector } from "react-redux";
+import capitals from "assets/capitals.json";
+
+const cities = capitals.map(x => x.City);
+const countries = capitals.map(x => x.Country);
+
+// const cap2 = capitals.filter(x => x.City && x.Country).map(x => {return { City: x.City, Country: x.Country  }});
+// console.log(JSON.stringify(cap2));
+
+
+function shuffleArray(array:any[]) {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+// create questions 
+function createCapitalOfQuestion() {
+
+  const q = getRandomly(capitals);
+
+  const template = "In what country is " + q.City + " the capital?"
+
+  // const correctAlt = q;
+  let alternatives = [
+    createAlt(getRandomly(countries)),
+    createAlt(getRandomly(countries)),
+    createAlt(getRandomly(countries)),
+    createAlt(q.Country, 5)
+  ];
+
+  shuffleArray(alternatives);
+
+  var output: IQuestion = {
+    id: template,
+    text: template,
+    time: 10,
+    type: "capitalof",
+    alternatives: alternatives
+  }
+
+  return output;
+}
+
+function createAlt(text: string, points?: number): IAlternative {
+  return {
+    text: text,
+    points: points || 0
+  }
+}
+
+function getRandomly(myArray:any[]) {
+  var rand = myArray[Math.floor(Math.random() * myArray.length)];
+  return rand;
+}
+
 
 const alternatives = [
   {
@@ -69,7 +125,7 @@ function cq(city: string): IQuestion {
 
 const initState: IRoundState = {
   roundId: "1",
-  questions: [cq("Paris"), cq("Beirut"), cq("Tel Aviv")],
+  questions: [],
   answers: {},
   currentQuestion: 0,
   myScore: 0,
@@ -84,6 +140,12 @@ const roundSlice = createSlice({
       state.status = "started";
       state.currentQuestion = 0;
       state.myScore = 0;
+
+      state.questions = [];
+      state.questions.push(createCapitalOfQuestion());
+      state.questions.push(createCapitalOfQuestion());
+      state.questions.push(createCapitalOfQuestion());
+
     },
     answerQuestion: (state, action) => {
       const finalQ = state.questions.length - 1;
