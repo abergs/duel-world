@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ceedbae419cd964cdf576697922de328",
+    "revision": "aec268ef5ae276d8ed9ff2f64b594fa2",
     "url": "/duel-world/index.html"
   },
   {
-    "revision": "ef7ea2f93ed9ddcfde5d",
-    "url": "/duel-world/static/css/main.c10b6128.chunk.css"
+    "revision": "371e6b2f00b6121de47f",
+    "url": "/duel-world/static/css/main.b7fc1c2e.chunk.css"
   },
   {
-    "revision": "976c9713b8ddec377ff9",
-    "url": "/duel-world/static/js/2.b7eca071.chunk.js"
+    "revision": "fe7fff5bd88f46e49d16",
+    "url": "/duel-world/static/js/2.eeab195b.chunk.js"
   },
   {
-    "revision": "ef7ea2f93ed9ddcfde5d",
-    "url": "/duel-world/static/js/main.2614a1cb.chunk.js"
+    "revision": "371e6b2f00b6121de47f",
+    "url": "/duel-world/static/js/main.0cb42b86.chunk.js"
   },
   {
     "revision": "254185639b527d029281",
@@ -46,6 +46,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c70c20221f1adaf24b0adda51c8a99bc",
     "url": "/duel-world/static/media/fart.c70c2022.mp3"
+  },
+  {
+    "revision": "735ca49b05ccf550f09b60d099fa05dc",
+    "url": "/duel-world/static/media/fart2.735ca49b.mp3"
   },
   {
     "revision": "57aa7ab9153d1779cef032fb6d5e2e8a",

@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/duel-world/static/css/main.c10b6128.chunk.css",
-    "main.js": "/duel-world/static/js/main.2614a1cb.chunk.js",
-    "main.js.map": "/duel-world/static/js/main.2614a1cb.chunk.js.map",
+    "main.css": "/duel-world/static/css/main.b7fc1c2e.chunk.css",
+    "main.js": "/duel-world/static/js/main.0cb42b86.chunk.js",
+    "main.js.map": "/duel-world/static/js/main.0cb42b86.chunk.js.map",
     "runtime-main.js": "/duel-world/static/js/runtime-main.9ea5906a.js",
     "runtime-main.js.map": "/duel-world/static/js/runtime-main.9ea5906a.js.map",
-    "static/js/2.b7eca071.chunk.js": "/duel-world/static/js/2.b7eca071.chunk.js",
-    "static/js/2.b7eca071.chunk.js.map": "/duel-world/static/js/2.b7eca071.chunk.js.map",
+    "static/js/2.eeab195b.chunk.js": "/duel-world/static/js/2.eeab195b.chunk.js",
+    "static/js/2.eeab195b.chunk.js.map": "/duel-world/static/js/2.eeab195b.chunk.js.map",
     "index.html": "/duel-world/index.html",
-    "precache-manifest.565b9da162935e519db2774a24af114c.js": "/duel-world/precache-manifest.565b9da162935e519db2774a24af114c.js",
+    "precache-manifest.d3827298074124862f6817fa5e3c25ea.js": "/duel-world/precache-manifest.d3827298074124862f6817fa5e3c25ea.js",
     "service-worker.js": "/duel-world/service-worker.js",
-    "static/css/main.c10b6128.chunk.css.map": "/duel-world/static/css/main.c10b6128.chunk.css.map",
+    "static/css/main.b7fc1c2e.chunk.css.map": "/duel-world/static/css/main.b7fc1c2e.chunk.css.map",
     "static/media/bubbleNegative.mp3": "/duel-world/static/media/bubbleNegative.a992299e.mp3",
     "static/media/bubbles.mp3": "/duel-world/static/media/bubbles.5e6c4969.mp3",
     "static/media/button1.mp3": "/duel-world/static/media/button1.97aa97e2.mp3",
@@ -18,12 +18,13 @@
     "static/media/chime.mp3": "/duel-world/static/media/chime.6cbb16a2.mp3",
     "static/media/errorbuzz.mp3": "/duel-world/static/media/errorbuzz.20df5d64.mp3",
     "static/media/fart.mp3": "/duel-world/static/media/fart.c70c2022.mp3",
+    "static/media/fart2.mp3": "/duel-world/static/media/fart2.735ca49b.mp3",
     "static/media/tickHorror.mp3": "/duel-world/static/media/tickHorror.57aa7ab9.mp3"
   },
   "entrypoints": [
     "static/js/runtime-main.9ea5906a.js",
-    "static/js/2.b7eca071.chunk.js",
-    "static/css/main.c10b6128.chunk.css",
-    "static/js/main.2614a1cb.chunk.js"
+    "static/js/2.eeab195b.chunk.js",
+    "static/css/main.b7fc1c2e.chunk.css",
+    "static/js/main.0cb42b86.chunk.js"
   ]
 }
