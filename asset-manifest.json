@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/duel-world/static/css/main.295c6eac.chunk.css",
-    "main.js": "/duel-world/static/js/main.287130ee.chunk.js",
-    "main.js.map": "/duel-world/static/js/main.287130ee.chunk.js.map",
+    "main.js": "/duel-world/static/js/main.1c3e516b.chunk.js",
+    "main.js.map": "/duel-world/static/js/main.1c3e516b.chunk.js.map",
     "runtime-main.js": "/duel-world/static/js/runtime-main.9ea5906a.js",
     "runtime-main.js.map": "/duel-world/static/js/runtime-main.9ea5906a.js.map",
-    "static/js/2.36f96718.chunk.js": "/duel-world/static/js/2.36f96718.chunk.js",
-    "static/js/2.36f96718.chunk.js.map": "/duel-world/static/js/2.36f96718.chunk.js.map",
+    "static/js/2.362bff40.chunk.js": "/duel-world/static/js/2.362bff40.chunk.js",
+    "static/js/2.362bff40.chunk.js.map": "/duel-world/static/js/2.362bff40.chunk.js.map",
     "index.html": "/duel-world/index.html",
-    "precache-manifest.250a3cbf375b773bcde4f12f6b0875f5.js": "/duel-world/precache-manifest.250a3cbf375b773bcde4f12f6b0875f5.js",
+    "precache-manifest.42ebb2f3627582a19d52a6b9db721322.js": "/duel-world/precache-manifest.42ebb2f3627582a19d52a6b9db721322.js",
     "service-worker.js": "/duel-world/service-worker.js",
     "static/css/main.295c6eac.chunk.css.map": "/duel-world/static/css/main.295c6eac.chunk.css.map",
     "static/media/bubbleNegative.mp3": "/duel-world/static/media/bubbleNegative.a992299e.mp3",
@@ -22,8 +22,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.9ea5906a.js",
-    "static/js/2.36f96718.chunk.js",
+    "static/js/2.362bff40.chunk.js",
     "static/css/main.295c6eac.chunk.css",
-    "static/js/main.287130ee.chunk.js"
+    "static/js/main.1c3e516b.chunk.js"
   ]
 }
