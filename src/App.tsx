@@ -33,7 +33,7 @@ export function WelcomeWizard() {
 
   return (
     <Screen>
-      <h1>Duel World</h1>
+      <h1 className="logo">Duel World</h1>
 
       <label>What should we call you?</label>
       <input

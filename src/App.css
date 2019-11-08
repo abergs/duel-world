@@ -1,6 +1,6 @@
 /* font-family: 'Indie Flower', cursive;
 font-family: 'Amatic SC', cursive;
-font-family: 'Permanent Marker', cursive; */
+ */
 
 * {
   box-sizing: border-box;
@@ -14,6 +14,18 @@ body {
 
 .App {
   text-align: center;
+}
+
+.logo {
+  font-family: 'Permanent Marker', cursive;
+  /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(254,95,0,1) 0%, rgba(255,229,106,1) 90% );
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(4,159,108,1) 0%, rgba(194,254,113,1) 90.1% ); */
+  /* background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  color: orange;
+    /* border: 1px solid; */
+  -webkit-text-stroke: .1px #fbfff9;
+  text-shadow: 0px 0px 10px #ffb500d1, 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .App-logo {
@@ -45,7 +57,7 @@ body {
   color: white;
   /* animation: gradientBG 20s ease infinite; */
   background-size: 400% 400%;
-  padding: 20px;
+  padding: 20px 30px;
 }
 
 @keyframes gradientBG {
@@ -65,6 +77,8 @@ body {
 }
 
 .screen {
+  display: flex;
+  flex-direction: column;
 }
 
 input {
@@ -79,14 +93,13 @@ input {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 }
 
 .alternative {
   background: #ffb300;
   padding: 10px 20px;
-  margin: 11px;
   border: 3px solid #fff;
   border-radius: 10px;
   background-size: 120% 120%;
@@ -167,6 +180,7 @@ button {
   border-radius: 7px;
   color: white;
   font-size: 1.3rem;
+  margin-top:30px;
 }
 
 .timerbar {

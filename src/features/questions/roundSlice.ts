@@ -164,7 +164,7 @@ const roundSlice = createSlice({
 
       state.status = "answered";
     },
-    nextQuestion: (state, action) => {
+    nextQuestion: (state) => {
       const finalQ = state.questions.length - 1;
       if (state.currentQuestion == finalQ) {
         state.status = "finished";

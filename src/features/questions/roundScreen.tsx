@@ -77,7 +77,7 @@ export default function RoundScreen(props: any) {
     if (getRandomInt(100) === 0) {
       fart.play();
     }
-    if (getRandomInt(100) === 0) {
+    else if (getRandomInt(100) === 0) {
       fart2.play();
     } else {
       bubbles.play();

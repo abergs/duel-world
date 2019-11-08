@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { WelcomeWizard } from "./App";
+import { WelcomeWizard } from "./WelcomeWizard";
 import QuestionScreen from "./QuestionScreen";
 import AnswerScreen from "./features/questions/answerScreen";
 import RoundScreen from "features/questions/roundScreen";
@@ -13,7 +13,7 @@ export function Game() {
   const nav = useSelector(state => state.nav);
 
   switch (nav.path) {
-    case "root": // return <WelcomeWizard />;
+    case "root": //return <WelcomeWizard />;
     case "round":
     case "question":
     return <RoundScreen />;

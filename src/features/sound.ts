@@ -9,7 +9,7 @@ import chimeMp3 from 'assets/chime.mp3'
 
 import bubblesmp3 from 'assets/bubbles.mp3'
 import fartmp3 from 'assets/fart.mp3'
-import fart2mp3 from 'assets/fart.mp3'
+import fart2mp3 from 'assets/fart2.mp3'
 
 export const beep1 = new Howl({src: beepMp3});
 export const beep2 = new Howl({src: beep2Mp3});

@@ -76,6 +76,7 @@ const throttle = (func, limit) => {
 var beep = throttle(() => beep1.play(), 1000);
 var horror = throttle(() => tickHorror.play(), 1000);
 
+
 /**
  * 
  * Display questsions

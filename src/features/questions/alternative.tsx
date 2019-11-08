@@ -12,6 +12,14 @@ export interface IAlternativeProps {
 }
 
 
+const Box = posed.div({
+  enter: { opacity: 1, y:0},
+  exit: { opacity: 0, y:20},
+});
+
+
+
+
 export default function Alternative(props: IAlternativeProps) {
   const text = props.text;
   
@@ -22,16 +30,10 @@ export default function Alternative(props: IAlternativeProps) {
     }
   };
 
-  // const Box = posed.div({
-  //   pressable: true,
-  //   init: { scale: 1 },
-  //   press: { scale: 0.8 },
-  //   onPoseComplete: p
-  // });
 
   return (
-    <div className={classnames({"alternative":true, "isMine": props.isMine, "isCorrect": props.isCorrect})} onClick={onC}>
+    <Box  {...props} className={classnames({"alternative":true, "isMine": props.isMine, "isCorrect": props.isCorrect})} onClick={onC} key={text} >
       {text}
-    </div>
+    </Box>
   );
 }
