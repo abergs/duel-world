@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/duel-world/static/css/main.295c6eac.chunk.css",
-    "main.js": "/duel-world/static/js/main.1c3e516b.chunk.js",
-    "main.js.map": "/duel-world/static/js/main.1c3e516b.chunk.js.map",
+    "main.css": "/duel-world/static/css/main.c10b6128.chunk.css",
+    "main.js": "/duel-world/static/js/main.2614a1cb.chunk.js",
+    "main.js.map": "/duel-world/static/js/main.2614a1cb.chunk.js.map",
     "runtime-main.js": "/duel-world/static/js/runtime-main.9ea5906a.js",
     "runtime-main.js.map": "/duel-world/static/js/runtime-main.9ea5906a.js.map",
-    "static/js/2.362bff40.chunk.js": "/duel-world/static/js/2.362bff40.chunk.js",
-    "static/js/2.362bff40.chunk.js.map": "/duel-world/static/js/2.362bff40.chunk.js.map",
+    "static/js/2.b7eca071.chunk.js": "/duel-world/static/js/2.b7eca071.chunk.js",
+    "static/js/2.b7eca071.chunk.js.map": "/duel-world/static/js/2.b7eca071.chunk.js.map",
     "index.html": "/duel-world/index.html",
-    "precache-manifest.42ebb2f3627582a19d52a6b9db721322.js": "/duel-world/precache-manifest.42ebb2f3627582a19d52a6b9db721322.js",
+    "precache-manifest.565b9da162935e519db2774a24af114c.js": "/duel-world/precache-manifest.565b9da162935e519db2774a24af114c.js",
     "service-worker.js": "/duel-world/service-worker.js",
-    "static/css/main.295c6eac.chunk.css.map": "/duel-world/static/css/main.295c6eac.chunk.css.map",
+    "static/css/main.c10b6128.chunk.css.map": "/duel-world/static/css/main.c10b6128.chunk.css.map",
     "static/media/bubbleNegative.mp3": "/duel-world/static/media/bubbleNegative.a992299e.mp3",
     "static/media/bubbles.mp3": "/duel-world/static/media/bubbles.5e6c4969.mp3",
     "static/media/button1.mp3": "/duel-world/static/media/button1.97aa97e2.mp3",
@@ -22,8 +22,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.9ea5906a.js",
-    "static/js/2.362bff40.chunk.js",
-    "static/css/main.295c6eac.chunk.css",
-    "static/js/main.1c3e516b.chunk.js"
+    "static/js/2.b7eca071.chunk.js",
+    "static/css/main.c10b6128.chunk.css",
+    "static/js/main.2614a1cb.chunk.js"
   ]
 }
