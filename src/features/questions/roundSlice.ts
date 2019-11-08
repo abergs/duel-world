@@ -145,6 +145,8 @@ const roundSlice = createSlice({
       state.questions.push(createCapitalOfQuestion());
       state.questions.push(createCapitalOfQuestion());
       state.questions.push(createCapitalOfQuestion());
+      state.questions.push(createCapitalOfQuestion());
+      state.questions.push(createCapitalOfQuestion());
 
     },
     answerQuestion: (state, action) => {
