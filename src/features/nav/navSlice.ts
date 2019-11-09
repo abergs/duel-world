@@ -1,6 +1,9 @@
 import { createSlice, PayloadAction } from 'redux-starter-kit'
 
 import { answerQuestion,nextQuestion } from "features/questions/roundSlice";
+import store from 'store';
+
+
 
 const navSlice = createSlice({
     name: 'nav',
@@ -10,6 +13,7 @@ const navSlice = createSlice({
                 const path = action.payload;
                 state.path = path;
                 console.log("state", path);
+                window.history.pushState(path, "","#" + path)
         }
     },
     extraReducers: {
@@ -25,4 +29,5 @@ const navSlice = createSlice({
 export const { setPath } = navSlice.actions
 
 export default navSlice.reducer;
+
 
