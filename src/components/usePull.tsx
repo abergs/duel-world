@@ -2,54 +2,64 @@ import React, { useRef, useEffect, useState } from "react";
 
 import WebPullToRefresh from "./wptr";
 
-interface IPullProps {
-    distanceToRefresh?: number,
-    resistance?: number,
-    callback?: () => void,
-    children: React.ReactChild[];
-
+export interface IUsePullProps {
+  callback: () => Promise<void>;
+  distanceToRefresh?: number;
+  resistance?: number;
+  progressCallback?: (percentage: number, distance:number) => void;
 }
 
-export default function UsePull(props: IPullProps) {
-  const ptr = useRef(null);
-  const content = useRef(null);
-  const refresher = useRef(null);
+interface IPullWrapProps extends IUsePullProps {
+  children?: React.ReactChild[];
+}
+
+export function usePull(props: IUsePullProps) {
   const wrapper = useRef(null);
+  const indicator = useRef(null);
+  const content = useRef(null);
 
-  const [progress, setProgress] = useState(0);
+  useEffect(() => {
+    var wpr = WebPullToRefresh();
 
-  const progressCallback = (percentage:number, distance:number) => {
-      console.log("progress", percentage, distance);
-      setProgress(percentage);
-  }
+    wpr.init({
+      contentEl: content.current,
+      ptrEl: indicator.current,
+      bodyEl: wrapper.current,
+      ...props
+      // hammerOptions: this.props.hammerOptions || undefined
+    });
 
-  useEffect( () => {
-    WebPullToRefresh().init({
-        contentEl: content.current,
-        ptrEl: ptr.current,
-        bodyEl: wrapper.current,
-        distanceToRefresh: props.distanceToRefresh || undefined,
-        loadingFunction: props.callback,
-        resistance: props.resistance || undefined,
-        progress: progressCallback,
-        // hammerOptions: this.props.hammerOptions || undefined
-      });
-
-      // todo: return cleanup
-
+    // todo: return cleanup
+    return () => {
+      wpr.unload();
+    };
   }, []);
 
+  return { indicator, content, wrapper };
+}
+
+export function PullWrap(props: IPullWrapProps) {
+  const [progress, setProgress] = useState(0);
+
+  const progressCallback = (percentage: number, distance: number) => {
+    console.log("progress", percentage, distance);
+    setProgress(percentage);
+  };
+
+  const { indicator, content, wrapper } = usePull(props);
+
   return (
-      <div className="wrapper" ref={wrapper}>
-    <div className="ptr" ref={ptr} style={
-        {color: "black", opacity: progress}
-    }>
-      <div className="refresher" ref={refresher}>Refresh icon</div>
+    <div className="wrapper" ref={wrapper}>
+      <div
+        className="ptr"
+        ref={indicator}
+        style={{ color: "black", opacity: progress }}
+      >
+        <div className="refresher">Refresh icon</div>
       </div>
       <div className="content" ref={content}>
         {props.children}
       </div>
-    
     </div>
   );
 }

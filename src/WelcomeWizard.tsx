@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Screen } from "./screen";
 import { useDispatch } from 'react-redux';
 import { setPath } from "features/nav/navSlice";
-import UsePull from "components/usePull";
+import {PullWrap} from "components/usePull";
 /**
  *
  * Logo, intro
@@ -15,8 +15,9 @@ export function WelcomeWizard() {
   var [name, setName] = useState("");
   var [isPlaying, setPlay] = useState(false);
   const dispatch = useDispatch();
+  const cb = () => Promise.resolve();
+
   return (<Screen>
-    <UsePull>
     <h1 className="logo">Duel World</h1>
 
     <label>What should we call you?</label><br />
@@ -28,6 +29,5 @@ export function WelcomeWizard() {
     }}>
       Play
       </button>
-      </UsePull>
   </Screen>);
 }

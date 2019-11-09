@@ -18,8 +18,6 @@ const Box = posed.div({
 });
 
 
-
-
 export default function Alternative(props: IAlternativeProps) {
   const text = props.text;
   
