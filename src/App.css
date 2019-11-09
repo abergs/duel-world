@@ -11,6 +11,7 @@ body {
   font-family: 'Amatic SC', cursive; */
   font-family: "Coming Soon", cursive;
   font-size:16px;
+  overscroll-behavior: contain;
 }
 
 .App {
@@ -296,3 +297,48 @@ button {
 }
 
 input, select { font-size: 100%; }
+
+
+.content {
+  background: black;
+}
+
+.wrapper {
+  position: relative;
+  background: white;
+  /* overflow: hidden; */
+}
+
+.ptr {
+  position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	color: #fff;
+	z-index: 10;
+	text-align: center;
+  height: 50px;
+  pointer-events: none;
+}
+
+.refresher {
+}
+
+/* smooth reset */
+.ptr-loading .content, .ptr-reset .content,
+.ptr-loading .ptr, .ptr-reset .ptr {
+	transition: all .25s ease;
+}
+
+
+/* ?? **/
+.ptr-reset .content {
+	-webkit-transform: translate3d( 0, 0, 0 );
+	transform: translate3d( 0, 0, 0 );
+}
+
+/** keep content locked while loading. */
+.ptr-loading .content {
+	-webkit-transform: translate3d( 0, 50px, 0 );
+	transform: translate3d( 0, 50px, 0 );
+}
