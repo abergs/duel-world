@@ -22,7 +22,7 @@ export function WelcomeWizard() {
     <br />
     <button onClick={e => {
       setPlay(true);
-      dispatch(setPath("round"));
+      dispatch(setPath("duels"));
     }}>
       Play
       </button>
