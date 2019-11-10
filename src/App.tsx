@@ -5,13 +5,15 @@ import "./App.css";
 import { connect, useDispatch } from 'react-redux'
 import { Game } from "./Game";
 import {setPath} from "features/nav/navSlice";
+import Slider from "components/slider";
 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Game />
+        <Slider />
+        {/* <Game /> */}
       </header>
     </div>
   );
