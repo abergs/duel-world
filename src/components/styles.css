@@ -70,9 +70,15 @@ body {
 }
 
 .av {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+  width: 100%;
+  height: 200px;
+  /* border-radius: 50%; */
   background-color: white;
   position: absolute;
+  z-index:90;
+}
+
+.av-spinner {
+  position: absolute;
+  bottom:0;
 }
