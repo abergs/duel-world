@@ -29,27 +29,27 @@ body {
 .item {
   position: relative;
   width: 300px;
-  height: 100px;
+  /* height: 100px; */
   pointer-events: auto;
-  transform-origin: 50% 50% 0px;
+  /* transform-origin: 50% 50% 0px;
   padding-left: 32px;
   padding-right: 32px;
-  box-sizing: border-box;
-  display: grid;
-  align-items: center;
-  text-align: center;
-  border-radius: 5px;
-  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box; */
+  /* display: grid; */
+  /* align-items: center; */
+  /* text-align: center; */
+  /* border-radius: 5px; */
+  /* box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.2); */
 }
 
 .fg {
   cursor: -webkit-grab;
   background-color: #272727;
   color: rgba(255, 255, 255, 0.8);
-  position: absolute;
+  position: relative;
   height: 100%;
   width: 100%;
-  display: grid;
+  /* display: grid; */
   align-items: center;
   text-align: center;
   border-radius: 5px;
@@ -74,4 +74,5 @@ body {
   height: 60px;
   border-radius: 50%;
   background-color: white;
+  position: absolute;
 }

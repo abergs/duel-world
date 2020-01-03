@@ -66,7 +66,8 @@ export default function Slider(props: any) {
 
       
       // WE ARE DONE
-      if(!down && actualProgress >= 1) {
+      var done = !down && actualProgress >= 1;
+      if(done) {
         // let the app know  
         callback()
           .then(() => {
@@ -95,11 +96,11 @@ export default function Slider(props: any) {
     }
   );
 
-  const avSize = y.interpolate({
+  const avSize = progress.interpolate({
     // @ts-ignore
     map: Math.abs,
-    range: [50, 300],
-    output: ["scale(0.5)", "scale(1)"],
+    range: [0, 1],
+    output: [0, 1],
     extrapolate: "clamp"
   });
 
@@ -107,12 +108,12 @@ export default function Slider(props: any) {
 
   return (
     <animated.div {...bind()} className="item" style={{
-    background: interpolate([progress, ready], (p,r) =>`linear-gradient(${360 * (p / 4)}deg, ${(r === 0) ? '#f093fb 0%, #f5576c' : '#96fbc4 0%, #f9f586'} 100%)`)
+    // background: interpolate([progress, ready], (p,r) =>`linear-gradient(${360 * (p / 4)}deg, ${(r === 0) ? '#f093fb 0%, #f5576c' : '#96fbc4 0%, #f9f586'} 100%)`)
         }}>
       <animated.div
         className="av"
         style={{
-          transform: avSize
+          opacity: avSize
           //   justifySelf: delta[0] < 0 ? "end" : "start"
         }}
       />

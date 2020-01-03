@@ -12,7 +12,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Slider />
+        <Slider><div>
+          hello
+          <button>Dostuff ></button>
+          <button>Other things</button>
+          <ul>
+            <li>Item 1</li>
+            </ul>
+          </div></Slider>
         {/* <Game /> */}
       </header>
     </div>
